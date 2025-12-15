@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "my-backend-app"
-        CONTAINER_NAME = "backend_container"
+        IMAGE_NAME = "server-app"
+        CONTAINER_NAME = "server_container"
         PORT = "4000"
     }
 
@@ -12,13 +12,13 @@ pipeline {
         stage('Clone Repo') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/<your-username>/<your-repo>.git'
+                    url: 'https://github.com/Varunjoshi-19/test-backend-jenkins-pipeline-.git'
             }
         }
 
         stage('Build Docker Image') {
             steps {
-                dir('backend') {
+                dir('server') {
                     sh '''
                     docker build -t $IMAGE_NAME .
                     '''
