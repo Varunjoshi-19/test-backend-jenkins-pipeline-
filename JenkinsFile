@@ -9,13 +9,6 @@ pipeline {
 
     stages {
 
-        stage('Clone Repo') {
-            steps {
-                git branch: 'main',
-                    url: 'https://github.com/Varunjoshi-19/test-backend-jenkins-pipeline-.git'
-            }
-        }
-
         stage('Build Docker Image') {
             steps {
                 dir('server') {
