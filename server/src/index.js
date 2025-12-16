@@ -7,7 +7,9 @@ const PORT = 4000;
 
 
 app.get("/api/health" , (req ,res) => {
-res.status(200).json({ message : "healthy server !!" });
+    const id = req.query.id;
+
+res.status(200).json({ message : "healthy server !!" , yourId : id });
 });
 
 app.get("/api/users" , (req ,res) => {
